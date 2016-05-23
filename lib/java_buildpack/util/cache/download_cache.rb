@@ -264,7 +264,7 @@ module JavaBuildpack
         def proxy(uri)
           proxy_uri = if secure?(uri)
                         URI.parse(ENV['https_proxy'] || ENV['HTTPS_PROXY'] || '')
-                      elseif
+                      else if
                         URI.parse(ENV['http_proxy'] || ENV['HTTP_PROXY'] || '')
                       else
                         URI.parse(ENV['no_proxy'] || ENV['NO_PROXY'] || '')
