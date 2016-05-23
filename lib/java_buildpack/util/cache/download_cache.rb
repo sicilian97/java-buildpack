@@ -266,6 +266,8 @@ module JavaBuildpack
                         URI.parse(ENV['https_proxy'] || ENV['HTTPS_PROXY'] || '')
                       else
                         URI.parse(ENV['http_proxy'] || ENV['HTTP_PROXY'] || '')
+                      else
+                        URI.parse(ENV['no_proxy'] || ENV['NO_PROXY'] || '')
                       end
 
           @logger.debug { "Proxy: #{proxy_uri.host}, #{proxy_uri.port}, #{proxy_uri.user}, #{proxy_uri.password}" }
